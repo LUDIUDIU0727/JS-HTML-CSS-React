@@ -51,4 +51,20 @@ Define the desired target states and let React figure out the actual Javascript 
 
 6.Passing Data via 'Props'
 
-7.
+7.useState hook. 
+- all the hooks should only be called inside the function.
+- they should be used directly inside component function.
+- useState hook always return an array.
+- useState(the value itself, updating function).
+  such as => const [title, setTitle] = useState(props.title);
+- the state is separated on a per component instance basis.
+- whenever you update your state and depend on your previous state,
+  setUserInput ((prevState)=>{
+    return{...prevState,enteredTitle:event.target.value};
+  });
+- event.preventDefault()  used to prevent this request to be sent.
+- two-way binding: can pass a new value back into the input.
+- Lift state up: move data from a child component to some parent component
+
+8.
+
