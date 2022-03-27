@@ -1,8 +1,54 @@
-{\rtf1\ansi\ansicpg936\cocoartf2580
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset134 PingFangSC-Regular;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+//Note of udemy learning of React.js
+Part1:
 
-\f0\fs24 \cf0 test for uploding content}
+1.const and let
+
+2.Arrow function: const myFunction=()=>{} 
+(not more issues with the this keyword)
+
+3.Exports & Imports(Modules)
+export default person       =>  import person from './xx.js' / import prs from './xx.js'
+export const baseData = 10; =>  import {baseData} from './xx.js' / import {baseData as bas} from './xx.js' 
+you can also import everything with * such as import * as bundled from 'xx.js', and all the value will be like bundled.baseData
+
+4.Classes, properties and methods
+Properties are like "variables" attached to classes/objects
+Methods are like "functions" attached to classes/objects
+
+5.Spread & Rest Operators
+Spread is used to split up array elements OR object properties
+: const newArray = [...oldArray,1,2] / const newObject = {...oldObject,newProp:5}
+       is used to merge a list of function arguments into an array
+: function sortArgs(...args){ return args.sort() }
+
+6.Destructuring
+ - Array Destructuring: [a,b]=['1','2'] console.log(a) //a
+ - Object Destructuring {name}={name:'max',age:28} console.log(age) //28
+
+7.Objects and arrays are reference types,if you reassign them, you are copying the pointer not the value.
+so if you want to do this in a real copy way, you will have to create a new object and just copy properties.
+
+Part2:
+*React is all about "Components"
+
+1.Components: reusable building blocks in your user interface
+we combine HTML,CSS and JAVASCRIPT in all these components.
+then we combine all these components to build the entire user interface.
+
+* react allows you to create re-usable and reactive components consisting of HTML,CSS and JAVASCRIPT. 
+
+2.Declarative Approach
+Define the desired target states and let React figure out the actual Javascript DOM instructions depends on different situation.
+
+3. npx create-react-app my-app
+   cd my-app
+   npm start
+
+4. * A component in React is just a JavaScript function.
+
+5.elements starting with an uppercase character are elements defined by developers.
+  elements with lowercase elements are built in HTML elements.
+
+6.Passing Data via 'Props'
+
+7.
