@@ -5,6 +5,9 @@ Part1:
 
 2.Arrow function: const myFunction=()=>{} 
 (not more issues with the this keyword)
+some examples of Arrow function:
+-: (a) => {return a+100;}
+-: (a,b)=>{let chunk=100; return a+b+chunk;}
 
 3.Exports & Imports(Modules)
 export default person       =>  import person from './xx.js' / import prs from './xx.js'
@@ -66,5 +69,9 @@ Define the desired target states and let React figure out the actual Javascript 
 - two-way binding: can pass a new value back into the input.
 - Lift state up: move data from a child component to some parent component
 
-8.
+8. JS: Array.map()
+* example: const array1=[1,4,9,16]; const map1=array1.map(x=>x*2);
+//expected output: array[2,8,18,32]
+
+9.
 
