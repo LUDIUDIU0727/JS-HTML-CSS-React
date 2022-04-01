@@ -73,5 +73,7 @@ Define the desired target states and let React figure out the actual Javascript 
 * example: const array1=[1,4,9,16]; const map1=array1.map(x=>x*2);
 //expected output: array[2,8,18,32]
 
-9.
+9.setting css dynamically : <div className={`form-control ${!isValid ? 'invalid' : ''}`}>
+
+10. styled components
 
