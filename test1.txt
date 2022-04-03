@@ -108,7 +108,17 @@ the second is the current element being processed, the third is the index of tha
 18.React portals need two things: a place you wannna port the component to, let the component know.
 React.createPortal(your react node that should be rendered, a pointer to that container in the real DOM where this elements should be rendered in)
 
-19.
+19.React Ref : you just want to read, you dont want to change anything, refs better.
+
+20.side effects: angthing else exclude the main jobs, such as store data in browser storage, send HTTP request to backend servers.
+to handle this, we use * useEffect() hook:
+- useEffect( ()=>{...}, [dependencies]);
+-the first is a function that should be executed after every component evaluation if the specified dependencies changed
+-you side effect code goes into this function
+-the second is a array full of dependencies, dependencies of this effect.
+-specify your dependencies of your function here
+
+21.
 
 
 
