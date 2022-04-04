@@ -111,14 +111,28 @@ React.createPortal(your react node that should be rendered, a pointer to that co
 19.React Ref : you just want to read, you dont want to change anything, refs better.
 
 20.side effects: angthing else exclude the main jobs, such as store data in browser storage, send HTTP request to backend servers.
-to handle this, we use * useEffect() hook:
+to handle side effects, we use * useEffect() hook:
 - useEffect( ()=>{...}, [dependencies]);
 -the first is a function that should be executed after every component evaluation if the specified dependencies changed
 -you side effect code goes into this function
 -the second is a array full of dependencies, dependencies of this effect.
 -specify your dependencies of your function here
 
-21.
+-- no dependency(second parameter) means it will only run once
+
+-- You learned, that you should add "everything" you use in the effect function as a dependency - i.e. all state variables and functions you use in there.
+* You DON'T need to add state updating functions
+*You also DON'T need to add "built-in" APIs or functions
+*You also DON'T need to add variables or functions you might've defined OUTSIDE of your components 
+You must add all "things" you use in your effect function if those "things" could change because your component (or some parent component) re-rendered. 
+
+21.debouncing (setTimeOut)
+22.clean up function. return ()=>{};
+
+23.useReducer() hook: useReducer() can be used as a replacement for useState() if you need more powerful state management.
+
+24. const[state,dispatchFn] = useReducer(reduceFn,initialState,initFn);
+
 
 
 
