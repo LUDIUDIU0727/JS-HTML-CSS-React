@@ -136,7 +136,115 @@ You must add all "things" you use in your effect function if those "things" coul
 
 24. const[state,dispatchFn] = useReducer(reduceFn,initialState,initFn);
 
+25.Context:一种组件间通信的方式，常用于【祖先组件】与【后代组件】间的通信。
+-创建Context容器对象: const xxxContext = React.createContext()
+-渲染子组件时，外面包裹xxxContext.Provider,通过value属性给后代传递数据。
+<xxxContext.Provider value={data}> 子组件 </xxxContext.Provider>
 
+-后代组件读取数据的方法:
+<xxxContext.Consumer> {value=(//value就是context中value的数据)}  </xxxContext.Consumer>
+
+26.{this.props.children} 
+
+27.useReducer(reducer,initialValue)函数通常传入2个参数，第1个参数为我们定义的一个“由dispatch引发的数据修改处理函数”，
+第2个参数为自定义数据的默认值，useReducer函数会返回自定义变量的引用和该自定义变量对应的“dispatch”。
+import React, { useReducer } from 'react'; //引入useReducer
+
+//定义好“事件处理函数” reducer
+function reducer(state, action) {
+  switch (action) {
+    case 'xx':
+        return xxxx;
+    case 'xx':
+        return xxxx;
+    default:
+        return xxxx;
+  }
+}
+
+function Component(){
+  //声明一个变量xxx，以及对应修改xxx的dispatch
+  //将事件处理函数reducer和默认值initialValue作为参数传递给useReducer
+  const [xxx, dispatch] = useReducer(reducer, initialValue); 
+
+  //若想获取xxx的值，直接使用xxx即可
+  
+  //若想修改xxx的值，通过dispatch来修改
+  dispatch('xx');
+}
+
+//请注意，上述代码中的action只是最基础的字符串形式，事实上action可以是多属性的object，这样可以自定义更多属性和更多参数值
+//例如 action 可以是 {type:'xx',param:xxx}
+
+useReducer使用示例2：
+
+import React, { useReducer } from 'react';
+
+function reducer(state,action){
+  switch(action){
+    case 'add':
+        return state + 1;
+    case 'sub':
+        return state - 1;
+    case 'mul':
+        return state * 2;
+    default:
+        console.log('what?');
+        return state;
+  }
+}
+
+function CountComponent() {
+  const [count, dispatch] = useReducer(reducer,0);
+
+  return <div>
+    {count}
+    <button onClick={() => {dispatch('add')}} >add</button>
+    <button onClick={() => {dispatch('sub')}} >sub</button>
+    <button onClick={() => {dispatch('mul')}} >mul</button>
+  </div>;
+}
+
+export default CountComponent;
+
+
+useReducer使用示例2:
+import React, { useReducer } from 'react';
+
+function reducer(state,action){
+  //根据action.type来判断该执行哪种修改
+  switch(action.type){
+    case 'add':
+      //count 最终加多少，取决于 action.param 的值
+      return state + action.param;
+    case 'sub':
+      return state - action.param;
+    case 'mul':
+      return state * action.param;
+    default:
+      console.log('what?');
+      return state;
+  }
+}
+
+function getRandom(){
+  return Math.floor(Math.random()*10);
+}
+
+function CountComponent() {
+  const [count, dispatch] = useReducer(reducer,0);
+
+  return <div>
+    {count}
+    <button onClick={() => {dispatch({type:'add',param:getRandom()})}} >add</button>
+    <button onClick={() => {dispatch({type:'sub',param:getRandom()})}} >sub</button>
+    <button onClick={() => {dispatch({type:'mul',param:getRandom()})}} >mul</button>
+  </div>;
+}
+
+export default CountComponent;
+
+28.
 
 
 
