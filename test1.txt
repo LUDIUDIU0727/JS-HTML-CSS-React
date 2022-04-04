@@ -117,8 +117,10 @@ to handle side effects, we use * useEffect() hook:
 -you side effect code goes into this function
 -the second is a array full of dependencies, dependencies of this effect.
 -specify your dependencies of your function here
+useEffect第一个可执行任何带副作用的操作，加return，在组件卸载前执行，可以做一些收尾工作比如清除定时器/取消订阅等。
 
--- no dependency(second parameter) means it will only run once
+
+-- no dependency(second parameter) means it will only run once只会在第一次render()后执行。
 
 -- You learned, that you should add "everything" you use in the effect function as a dependency - i.e. all state variables and functions you use in there.
 * You DON'T need to add state updating functions
