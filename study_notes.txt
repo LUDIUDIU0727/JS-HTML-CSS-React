@@ -244,7 +244,7 @@ function CountComponent() {
 
 export default CountComponent;
 
-28.
+28. React Context is Not optimized for high frequency changes!
 
 
 
