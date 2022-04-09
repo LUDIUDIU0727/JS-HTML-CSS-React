@@ -1,0 +1,26 @@
+webpack是一个用于现代JavaScript应用程序的静态模块打包工具.当webpack处理应用程序时,它会在内部从一个或者多个入口构建一个
+依赖图dependency graph,然后将你项目中所需的每一个模块组合成一个或者多个bundles,它们均为静态资源用于展示你的内容。
+
+webpack核心概念。
+
+entry入口  输出output  loader  插件plugin 模式mode 浏览器兼容browser compatibility  环境environment
+
+1.entry point入口:指示webpack应该使用哪个模块来作为其构建内部依赖图dependency graph的开始,进入入口起点后,webpack会
+找出有哪些模块和库是入口起点(直接和间接)依赖的。
+默认值是 ./src/index.js,但你可以通过在webpack configuration中配置entry属性来指定一个或多个不同的入口起点.
+例如 webpack.config.js  module.exports=[entry:'./path/to/my/entry/file.js']
+
+2.输出output:该属性是告诉webpack在哪里输出它所创建的bundle,以及如何命名这些文件.主要输出文件的默认值是
+./dist/main.js,其他生成文件默认放置在./dist文件夹中。
+例如 webpack.config.js  const path = require('path');
+                       module.exports={
+                           entry:'./path/to/my/entry/file.js',
+                           output:{
+                               path:path.resolve(__dirname,'dist'),
+                               filename:'my-first-webpack-bundle.js'
+                           },
+                       };
+                       我们通过output.filename和output.path告诉webpack bundle的名称以及我们想要bundle生成到哪里
+
+
+3.loader
