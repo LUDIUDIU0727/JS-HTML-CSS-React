@@ -13,3 +13,5 @@ const DemoOutput = props => {
 
 
 export default React.memo(DemoOutput);
+//only the props changed this component will be re-excuted
+//functions are objects in js
