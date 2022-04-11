@@ -246,5 +246,18 @@ export default CountComponent;
 
 28. React Context is Not optimized for high frequency changes!
 
+总结:
+React: a JavaScript library for building user interface
+ReactDOM:interface to web
+RealDOM:what the user sees
+Components: 
+  context:component-wide data
+  props:data from parent component
+  state:internal data
+React determines how the component tree currently looks like and what it should look like
+ReactDOM receives the differences(the required changes)and then manipulates the real DOM
+
+
+
 
 
