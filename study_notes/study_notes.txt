@@ -270,6 +270,9 @@ error response list: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
 GET/POST DATA(project 05)
 
+*custom hooks
+outsource stateful logic into re-usable functions, unlike regular functions,custom hooks can use other react hooks and react state.
+
 
 
 
