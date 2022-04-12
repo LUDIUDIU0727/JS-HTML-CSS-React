@@ -257,6 +257,19 @@ Components:
 React determines how the component tree currently looks like and what it should look like
 ReactDOM receives the differences(the required changes)and then manipulates the real DOM
 
+29.API stands for application programming interface(you get different entry points which leads to different results)
+
+REST API: a couple of urls which you send that request to get back data in a certain format
+and different URLs to which you send different requests will give you different chunks of data.
+
+Fetch API to fetch data.
+
+asynchronous 异步通信 async(codes project05)
+
+error response list: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+
+
 
 
 
