@@ -268,7 +268,7 @@ asynchronous 异步通信 async(codes project05)
 
 error response list: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
-
+GET/POST DATA(project 05)
 
 
 
