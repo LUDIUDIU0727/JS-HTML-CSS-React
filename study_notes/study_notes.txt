@@ -66,6 +66,12 @@ Define the desired target states and let React figure out the actual Javascript 
     return{...prevState,enteredTitle:event.target.value};
   });
 - event.preventDefault()  used to prevent this request to be sent.
+because we are dealing with some vanilla JAVASCRIPT and browser behavior,and the default behavior by the browser is that if
+a form is submitted with a button instead of a form, a HTTP request is sent to the server which is serving this website, 
+that happens automatically,we use this to tell not send this HTTP requst and instead to nothing. if the request to be sent,
+it would lead to the page being reloaded in the end, and that would restart the entire react application and we would lose 
+our state.
+
 - two-way binding: can pass a new value back into the input.
 - Lift state up: move data from a child component to some parent component
 
@@ -272,8 +278,4 @@ GET/POST DATA(project 05)
 
 *custom hooks
 outsource stateful logic into re-usable functions, unlike regular functions,custom hooks can use other react hooks and react state.
-
-
-
-
 
