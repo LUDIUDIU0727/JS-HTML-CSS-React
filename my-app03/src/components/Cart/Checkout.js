@@ -3,7 +3,7 @@ import { useRef, useState } from 'react';
 import classes from './Checkout.module.css';
 
 const isEmpty = value => value.trim() === '';
-const isFiveChars = value => value.trim() === 5;
+const isFiveChars = value => value.trim().length === 5;
 
 
 const Checkout = (props) => {
@@ -46,14 +46,21 @@ const Checkout = (props) => {
 
         }
 
+        props.onConfirm({
+            name: enteredName,
+            street: enteredStreet,
+            postalCode: enteredPostalCode,
+            city: enteredCity,
+        });
+
         //submit data
 
     };
 
-    const nameControlClasses = `${classes.control}${formInputValidity.name ? '' : classes.invalid}`;
-    const streetControlClasses = `${classes.control}${formInputValidity.street ? '' : classes.invalid}`;
-    const postalCodeControlClasses = `${classes.control}${formInputValidity.postalCode ? '' : classes.invalid}`;
-    const cityControlClasses = `${classes.control}${formInputValidity.city ? '' : classes.invalid}`;
+    const nameControlClasses = `${classes.control} ${formInputValidity.name ? '' : classes.invalid}`;
+    const streetControlClasses = `${classes.control} ${formInputValidity.street ? '' : classes.invalid}`;
+    const postalCodeControlClasses = `${classes.control} ${formInputValidity.postalCode ? '' : classes.invalid}`;
+    const cityControlClasses = `${classes.control} ${formInputValidity.city ? '' : classes.invalid}`;
 
 
     return (
