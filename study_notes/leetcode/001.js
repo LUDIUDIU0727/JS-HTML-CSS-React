@@ -18,3 +18,17 @@ console.log(twoSum(nums, target))
 //You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 //You can return the answer in any order.
+
+//伪代码  Pseudocode
+// result = []
+// map = HashTable()
+// for i in [0, len(nums)]:
+//     map.add(nums[i], i)
+// for j in [0, len(nums)]:
+//     diff = target - nums[j]
+//     if map.containskey(diff) and map.get(diff) != j:
+//         return result[0] = j
+//                result[i] = map.get(diff)
+// return result
+
+
