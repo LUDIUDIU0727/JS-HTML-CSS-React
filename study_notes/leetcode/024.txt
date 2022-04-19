@@ -1,0 +1,4 @@
+两两交换链表中的节点given a linked list, swap every two adjacent nodes and return its head.
+
+1->2->3->4 返回 2->1->4->3
+

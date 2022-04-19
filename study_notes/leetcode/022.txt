@@ -1,0 +1,24 @@
+有效括号，回溯算法。
+当右边的括号数量大于左边的括号数量，是无效的
+
+伪代码:
+
+func(n)->[]:
+    result=[]   //最后返回的结果 里面存储有效数据
+    backtracking(n,result,0,0,"")       
+
+return result
+
+
+backtracking(n,result,left,right,str)->void:   //left right为左右括号数量 str存放当前字符串
+    if right>left:          //当前右边括号数大于左边括号数 无效
+        return
+    if left == right == n:  //满足题目要求 有效结果 退出
+        result.add(str) 
+        return
+                                 
+    if left<n:   //说明当前还有剩余数量的左括号可以加
+        backtracking(n,result,left+1,right,str+"(")   //
+    if right<left:
+        backtracking(n,result,left,right+1,str+")")   //
+

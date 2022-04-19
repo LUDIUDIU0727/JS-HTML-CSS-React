@@ -1,0 +1,33 @@
+移除元素
+给定num=[3,2,2,3] val=3,
+函数应该返回新的长度为2 并且nums中的前两个元素均为2 ([2,2,3,3])
+给定nums=[0,1,2,2,3,0,4,2] val=2
+函数应该返回新的长度为5 并且nums中的前五个元素为0,1,3,0,4 ([0,1,3,0,4,2,2,2])
+
+
+
+
+双指针法:左边一个指针,右边一个指针，先move左边的指针直到找到第一个value为2的数为止，
+然后move右边的指针直到找到第一个不为2的数为止，然后交换两个指针的数，l和r相等的时候说明数组遍历完了。
+
+
+python:
+
+
+class Solution:
+
+    def removeElement(self,nums:List[int],val:int):
+        if nums is None or len(nums)==0:
+            return 0
+        
+        l=0
+        r=len(nums)-1
+
+        while l<r:
+            while(l<r and nums[l]!=val):
+                l+=1
+            while(l<r and nums[r]==val):
+                r-=1
+            nums[l],nums[r]=nums[r],nums[l] //交换
+
+        return l if nums[l]==value else l+1
