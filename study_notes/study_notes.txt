@@ -279,3 +279,8 @@ GET/POST DATA(project 05)
 *custom hooks
 outsource stateful logic into re-usable functions, unlike regular functions,custom hooks can use other react hooks and react state.
 
+30.Redux: a state management system for cross-component or app-wide state
+local state,cross-component state,app-wide state
+
+31.
+

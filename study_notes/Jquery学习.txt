@@ -1,0 +1,46 @@
+1. a document ready function
+
+<script script >
+  $(document).ready(function() {
+
+  });
+</script>
+
+2. all JQuery functions start with a $, usually referred to as a dollar sign operator,or as bling
+JQuery often selects an HTML with a selector, then does something to that element.
+such as :  $("button").addClass("animated bounce");
+           $("button").removeClass("animated bounce");
+           $(#button1").addClass("animated bounce");
+
+
+3.jQuery has a function called .prop() that allows you to adjust the properties of elements.
+such as : $("button").prop("disabled", true);
+
+4.jQuery has a function called .html() that lets you add HTML tags and text within an element. 
+Any content previously within the element will be completely replaced with the content you provide using this function.
+such as : $("h3").html("<em>jQuery Playground</em>");
+
+5.jQuery has a function called .remove() that will remove an HTML element entirely
+
+6.jQuery has a function called appendTo() that allows you to select HTML elements and append them to another element.
+For example, if we wanted to move target4 from our right well to our left well, we would use:
+$("#target4").appendTo("#left-well");
+
+7.jQuery has a function called clone() that makes a copy of an element.
+For example, if we wanted to copy target2 from our left-well to our right-well, we would use:
+$("#target2").clone().appendTo("#right-well");
+
+8.jQuery has a function called parent() that allows you to access the parent of whichever element you've selected.
+
+9.jQuery has a function called children() that allows you to access the children of whichever element you've selected.
+
+10.jQuery uses CSS Selectors to target elements. The target:nth-child(n) CSS selector allows you to select all the nth elements with the target class or element type.
+Here's how you would give the third element in each well the bounce class:
+$(".target:nth-child(3)").addClass("animated bounce");
+
+11.You can also target elements based on their positions using :odd or :even selectors.
+$(".target:odd").addClass("animated shake");
+
+12.jQuery can target the body element as well.how we would make the entire body fade out:
+$("body").addClass("animated fadeOut");
+
