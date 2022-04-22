@@ -4,3 +4,8 @@ This also means that any time any piece of your app wants to update state, it mu
 The Redux store is an object which holds and manages application state. There is a method called createStore() on the Redux object, which you use to create the Redux store. This method takes a reducer function as a required argument. The reducer function is covered in a later challenge, and is already defined for you in the code editor. It simply takes state as an argument and returns state.
 
 
+npm install redux react-redux
+
+
+redux cycle: action creator -> action -> dispatch -> reducers -> state
+
