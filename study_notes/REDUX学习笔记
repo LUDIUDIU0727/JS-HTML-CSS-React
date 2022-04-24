@@ -9,3 +9,4 @@ npm install redux react-redux
 
 redux cycle: action creator -> action -> dispatch -> reducers -> state
 
+redux
