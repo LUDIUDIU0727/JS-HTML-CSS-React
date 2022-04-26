@@ -96,6 +96,9 @@ store.dispatch(deletePolicy('Bob));
 
 
 
+To change state of our app, we call an action creator, it produces an action, gets fed to dispatch,
+dispatch forwards the action to reducers, reducers create new state, wait until we need to update
+state again.
 
 
 

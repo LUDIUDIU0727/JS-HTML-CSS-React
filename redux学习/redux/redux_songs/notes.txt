@@ -1,0 +1,10 @@
+npm install --save redux react-redux
+
+APP - songList
+    - songDetail
+
+Redux - Reducers: song list reducer 
+                  selected song reducer
+      
+      - action creators: select song
+      
