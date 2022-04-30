@@ -34,3 +34,6 @@ function App() {
 }
 
 export default App;
+
+
+//practice route in more realistic app
