@@ -37,3 +37,4 @@ export default App;
 
 
 //practice route in more realistic app
+// an simple exmaple
