@@ -1,27 +1,11 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import IngredientList from './IngredientList';
 import IngredientForm from './IngredientForm';
 import Search from './Search';
 
 const Ingredients = () => {
   const [userIngredients, setUserIngredients] = useState([]);
-
-  useEffect(() => {  // after and for every render cycle
-    fetch('https://react-htttp-24e60-default-rtdb.firebaseio.com/ingredients.json').then(
-      response => response.json()
-    ).then(responseData => {
-      const loadedIngredients = [];
-      for (const key in responseData) {
-        loadedIngredients.push({
-          id: key,
-          title: responseData[key].title,
-          amount: responseData[key].amount,
-        });
-      }
-      setUserIngredients(loadedIngredients);
-    });
-
-  }, [])
+  const [isLoading, setIsLoading] = useState(false);
 
   const filteredIngredientsHandler = useCallback(filteredIngredients => {
     setUserIngredients(filteredIngredients);
@@ -29,12 +13,14 @@ const Ingredients = () => {
 
 
   const addIngredientHandler = (ingredient) => {
+    setIsLoading(true);
     fetch('https://react-htttp-24e60-default-rtdb.firebaseio.com/ingredients.json', {
       method: 'POST',
       body: JSON.stringify(ingredient),
       headers: { 'Content-Type': 'application/json' }
 
     }).then(response => {
+      setIsLoading(false);
       return response.json();
     }).then(responseData => {
       setUserIngredients(prevIngredients => [
@@ -47,6 +33,14 @@ const Ingredients = () => {
   };
 
   const removeIngredientHandler = (ingredientId) => {
+    setIsLoading(true);
+    fetch(`https://react-htttp-24e60-default-rtdb.firebaseio.com/ingredients/${ingredientId}.json`, {
+      method: 'DELETE',
+    }).then(response => {
+      setIsLoading(false);
+      setUserIngredients(prevIngredients => prevIngredients.filter(ingredient => ingredient.id !== ingredientId))
+
+    })
     setUserIngredients(prevIngredients => prevIngredients.filter((ingredient) => ingredient.id !== ingredientId)
     );
 
@@ -54,7 +48,7 @@ const Ingredients = () => {
   };
   return (
     <div className="App">
-      <IngredientForm onAddIngredient={addIngredientHandler} />
+      <IngredientForm onAddIngredient={addIngredientHandler} loading={isLoading} />
 
       <section>
         <Search onLoadIngredients={filteredIngredientsHandler} />
